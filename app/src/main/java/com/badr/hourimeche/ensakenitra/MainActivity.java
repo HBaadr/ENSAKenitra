@@ -19,7 +19,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.badr.hourimeche.ensakenitra.adapters.RecyclerViewAdapter;
 import com.badr.hourimeche.ensakenitra.models.ItemData;
@@ -64,17 +63,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if (isNetworkAvailable(this)) {
-            progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
-            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            progressDialog.show();
-            progressDialog.setCancelable(false);
-            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
-            new doit().execute();
-        } else {
-            Toast.makeText(this, "Vous devez disposer d'une connexion Internet !!", Toast.LENGTH_LONG).show();
-        }
+//        if (isNetworkAvailable(this)) {
+//            progressDialog = new ProgressDialog(this);
+//            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
+//            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//            progressDialog.show();
+//            progressDialog.setCancelable(false);
+//            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
+//            new doit().execute();
+//        } else {
+//            Toasty.error(this, "Vous devez disposer d'une connexion Internet !!", 50, true).show();
+//        }
 
     }
 

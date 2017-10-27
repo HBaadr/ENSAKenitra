@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity
             recyclerView = (RecyclerView) findViewById(R.id.recycleV);
             new doit().execute();
         } else {
-            Toast.makeText(this, "Vous devez disposer d'une connexion Internet !", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Vous devez disposer d'une connexion Internet !!", Toast.LENGTH_LONG).show();
         }
 
     }

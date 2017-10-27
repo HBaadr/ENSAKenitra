@@ -63,17 +63,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        if (isNetworkAvailable(this)) {
-//            progressDialog = new ProgressDialog(this);
-//            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
-//            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//            progressDialog.show();
-//            progressDialog.setCancelable(false);
-//            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
-//            new doit().execute();
-//        } else {
-//            Toast.makeText(this, "Vous devez disposer d'une connexion Internet !", Toast.LENGTH_LONG).show();
-//        }
+        if (isNetworkAvailable(this)) {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
+            new doit().execute();
+        } else {
+            Toast.makeText(this, "Vous devez disposer d'une connexion Internet !", Toast.LENGTH_LONG).show();
+        }
 
     }
 

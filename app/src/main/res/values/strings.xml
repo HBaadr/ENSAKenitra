@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ENSAKenitra</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="administration">Administration</string>
+    <string name="corps_enseignant">Corps Enseignant</string>
+    <string name="infrastrucrures">Infrastrucrures</string>
+    <string name="mot_du_directeur">Mot du Directeur</string>
+    <string name="pr_sentation">Présentation</string>
+    <string name="r_glement_int_rieur_de_l_ecole">Règlement Intérieur de l’Ecole</string>
+    <string name="ensa_k">ENSA-K</string>
+    <string name="formations">FORMATIONS</string>
+    <string name="espace_etudiant">ESPACE ETUDIANT</string>
+    <string name="recherche">RECHERCHE</string>
+    <string name="cooperation">COOPERATION</string>
+    <string name="activites_parascolaires">ACTIVITES PARASCOLAIRES</string>
+    <string name="espace_laureat">ESPACE LAUREAT</string>
+    <string name="modalit_s_d_admission">Modalités d’admission</string>
+    <string name="formations_continues">Formations Continues</string>
+    <string name="cycle_master">Cycle Master</string>
+    <string name="cycle_ing_nieur">Cycle Ingénieur</string>
+    <string name="ann_es_pr_paratoires">Années Préparatoires</string>
+    <string name="architecture_p_dagogique">Architecture pédagogique</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

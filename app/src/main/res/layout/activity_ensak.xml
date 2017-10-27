@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="com.badr.hourimeche.ensakenitra.staticActivitys.ensak.ENSAK">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/administrator"
+            android:gravity="top"
+            android:onClick="but1"
+            android:padding="15dp"
+            android:text="@string/administration"
+            android:textAlignment="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/teacher"
+            android:gravity="top"
+            android:onClick="but2"
+            android:padding="15dp"
+            android:text="@string/corps_enseignant"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/school"
+            android:gravity="top"
+            android:onClick="but3"
+            android:padding="15dp"
+            android:text="@string/infrastrucrures"
+            android:textAlignment="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/presentation"
+            android:gravity="top"
+            android:onClick="but4"
+            android:padding="15dp"
+            android:text="@string/mot_du_directeur"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/barschart"
+            android:gravity="top"
+            android:onClick="but5"
+            android:padding="15dp"
+            android:text="@string/pr_sentation"
+            android:textAlignment="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:drawableBottom="@drawable/amonestation"
+            android:gravity="top"
+            android:onClick="but6"
+            android:padding="15dp"
+            android:text="@string/r_glement_int_rieur_de_l_ecole"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+</LinearLayout>

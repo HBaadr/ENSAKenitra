@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab1"
+        android:icon="@drawable/ensak"
+        android:title="@string/ensa_k" />
+    <item
+        android:id="@+id/tab2"
+        android:icon="@drawable/training"
+        android:title="@string/formations" />
+    <item
+        android:id="@+id/tab3"
+        android:icon="@drawable/study"
+        android:title="@string/espace_etudiant" />
+    <item
+        android:id="@+id/tab4"
+        android:icon="@drawable/microscope"
+        android:title="@string/recherche" />
+    <item
+        android:id="@+id/tab5"
+        android:icon="@drawable/shake"
+        android:title="@string/cooperation" />
+    <item
+        android:id="@+id/tab6"
+        android:icon="@drawable/disco"
+        android:title="@string/activites_parascolaires" />
+    <item
+        android:id="@+id/tab7"
+        android:icon="@drawable/graduate"
+        android:title="@string/espace_laureat" />
+
+</menu>

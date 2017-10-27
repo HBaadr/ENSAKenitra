@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity
             recyclerView.setDrawingCacheEnabled(true);
             recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
             progressDialog.dismiss();
-            //Badr
         }
     }
 }

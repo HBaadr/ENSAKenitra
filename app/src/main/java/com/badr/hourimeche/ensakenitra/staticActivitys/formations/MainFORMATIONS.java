@@ -3,11 +3,19 @@ package com.badr.hourimeche.ensakenitra.staticActivitys.formations;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.badr.hourimeche.ensakenitra.R;
+import com.badr.hourimeche.ensakenitra.staticActivitys.ensak.ENSAK;
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fragment1;
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fragment2;
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fragment3;
@@ -15,7 +23,7 @@ import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fra
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fragment5;
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.fragements.Fragment6;
 
-public class MainFORMATIONS extends AppCompatActivity {
+public class MainFORMATIONS extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     int str;
     Button button, exbutton;
@@ -25,10 +33,50 @@ public class MainFORMATIONS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_formations);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
         Intent intent = getIntent();
         str = intent.getIntExtra("num", 1);
 
         fragments(str, "add");
+    }@SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        Intent intent = null;
+
+        if (id == R.id.tab1) {
+            intent = new Intent(this, ENSAK.class);
+        } else if (id == R.id.tab2) {
+            intent = new Intent(this, FORMATIONS.class);
+        } else if (id == R.id.tab3) {
+
+        } else if (id == R.id.tab4) {
+
+        } else if (id == R.id.tab5) {
+
+        } else if (id == R.id.tab6) {
+
+        } else if (id == R.id.tab7) {
+
+        }
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     int fragments(int num, String str) {

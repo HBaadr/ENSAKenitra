@@ -25,12 +25,22 @@
         <activity
             android:name=".WebV"
             android:screenOrientation="portrait" />
-        <activity android:name=".staticActivitys.ensak.ENSAK" />
-        <activity android:name=".staticActivitys.formations.FORMATIONS" />
+        <activity
+            android:name=".staticActivitys.ensak.ENSAK"
+            android:label="@string/ensa_k"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".staticActivitys.formations.FORMATIONS"
+            android:label="@string/formations"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".staticActivitys.ensak.MainENSAK"
+            android:label="@string/ensa_k"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".staticActivitys.formations.MainFORMATIONS"></activity>
+        <activity
+            android:name=".staticActivitys.formations.MainFORMATIONS"
+            android:label="@string/formations"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

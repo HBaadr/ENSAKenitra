@@ -1,103 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="15dp"
-    tools:context="com.badr.hourimeche.ensakenitra.staticActivitys.formations.FORMATIONS">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <Button
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/blueprint"
-            android:gravity="top"
-            android:onClick="but1"
-            android:padding="15dp"
-            android:text="@string/architecture_p_dagogique"
-            android:textAlignment="center" />
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/school"
-            android:gravity="top"
-            android:onClick="but2"
-            android:padding="15dp"
-            android:text="@string/ann_es_pr_paratoires"
-            android:textAlignment="center" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/blueprint"
+                    android:gravity="top"
+                    android:onClick="but1"
+                    android:padding="15dp"
+                    android:text="@string/architecture_p_dagogique"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/school"
+                    android:gravity="top"
+                    android:onClick="but2"
+                    android:padding="15dp"
+                    android:text="@string/ann_es_pr_paratoires"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/school"
+                    android:gravity="top"
+                    android:onClick="but3"
+                    android:padding="15dp"
+                    android:text="@string/cycle_ing_nieur"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/school"
+                    android:gravity="top"
+                    android:onClick="but4"
+                    android:padding="15dp"
+                    android:text="@string/cycle_master"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/school"
+                    android:gravity="top"
+                    android:onClick="but5"
+                    android:padding="15dp"
+                    android:text="@string/formations_continues"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:drawableBottom="@drawable/school"
+                    android:gravity="top"
+                    android:onClick="but6"
+                    android:padding="15dp"
+                    android:text="@string/modalit_s_d_admission"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/school"
-            android:gravity="top"
-            android:onClick="but3"
-            android:padding="15dp"
-            android:text="@string/cycle_ing_nieur"
-            android:textAlignment="center" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/school"
-            android:gravity="top"
-            android:onClick="but4"
-            android:padding="15dp"
-            android:text="@string/cycle_master"
-            android:textAlignment="center" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/school"
-            android:gravity="top"
-            android:onClick="but5"
-            android:padding="15dp"
-            android:text="@string/formations_continues"
-            android:textAlignment="center" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:drawableBottom="@drawable/school"
-            android:gravity="top"
-            android:onClick="but6"
-            android:padding="15dp"
-            android:text="@string/modalit_s_d_admission"
-            android:textAlignment="center" />
-    </LinearLayout>
-
-</LinearLayout>
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+</android.support.v4.widget.DrawerLayout>

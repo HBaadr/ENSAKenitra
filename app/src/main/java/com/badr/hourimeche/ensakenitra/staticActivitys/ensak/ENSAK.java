@@ -2,19 +2,66 @@ package com.badr.hourimeche.ensakenitra.staticActivitys.ensak;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.badr.hourimeche.ensakenitra.R;
+import com.badr.hourimeche.ensakenitra.staticActivitys.formations.FORMATIONS;
 
-public class ENSAK extends AppCompatActivity {
+public class ENSAK extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ensak);
-        Intent intent = getIntent();
-        setTitle(intent.getStringExtra("title"));
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);;
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        Intent intent = null;
+
+        if (id == R.id.tab1) {
+            intent = new Intent(this, ENSAK.class);
+        } else if (id == R.id.tab2) {
+            intent = new Intent(this, FORMATIONS.class);
+        } else if (id == R.id.tab3) {
+
+        } else if (id == R.id.tab4) {
+
+        } else if (id == R.id.tab5) {
+
+        } else if (id == R.id.tab6) {
+
+        } else if (id == R.id.tab7) {
+
+        }
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     public void but1(View view) {

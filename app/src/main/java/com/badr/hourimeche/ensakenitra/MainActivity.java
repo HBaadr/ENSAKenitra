@@ -96,10 +96,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.tab1) {
             intent = new Intent(this, ENSAK.class);
-            intent.putExtra("title", getString(R.string.ensa_k));
         } else if (id == R.id.tab2) {
             intent = new Intent(this, FORMATIONS.class);
-            intent.putExtra("title", getString(R.string.formations));
         } else if (id == R.id.tab3) {
 
         } else if (id == R.id.tab4) {

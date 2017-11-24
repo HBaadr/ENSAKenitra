@@ -4,6 +4,15 @@ package com.badr.hourimeche.ensakenitra.models;
 public class ItemData {
     private String name;
     private String URL;
+    private String imgUrl;
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 
     public String getURL() {
         return URL;

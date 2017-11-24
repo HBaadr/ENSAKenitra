@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.badr.hourimeche.ensakenitra.MainActivity;
 import com.badr.hourimeche.ensakenitra.R;
 import com.badr.hourimeche.ensakenitra.staticActivitys.formations.FORMATIONS;
 
@@ -22,16 +23,16 @@ public class ENSAK extends AppCompatActivity implements NavigationView.OnNavigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ensak);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);;
     }
 
@@ -41,22 +42,13 @@ public class ENSAK extends AppCompatActivity implements NavigationView.OnNavigat
 
         int id = item.getItemId();
         Intent intent = null;
-
-        if (id == R.id.tab1) {
-            intent = new Intent(this, ENSAK.class);
-        } else if (id == R.id.tab2) {
-            intent = new Intent(this, FORMATIONS.class);
-        } else if (id == R.id.tab3) {
-
-        } else if (id == R.id.tab4) {
-
-        } else if (id == R.id.tab5) {
-
-        } else if (id == R.id.tab6) {
-
-        } else if (id == R.id.tab7) {
-
-        }
+        if (id == R.id.tab1)      intent = new Intent(this, ENSAK.class);
+        else if (id == R.id.tab2) intent = new Intent(this, FORMATIONS.class);
+        else if (id == R.id.tab3) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab4) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab5) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab6) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab7) intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

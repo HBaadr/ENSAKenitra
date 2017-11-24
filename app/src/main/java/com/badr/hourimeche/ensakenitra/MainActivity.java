@@ -27,11 +27,12 @@ import com.badr.hourimeche.ensakenitra.staticActivitys.formations.FORMATIONS;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,35 +52,35 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        if (isNetworkAvailable(this)) {
-//            progressDialog = new ProgressDialog(this);
-//            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
-//            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//            progressDialog.show();
-//            progressDialog.setCancelable(false);
-//            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
-//            new doit().execute();
-//        } else {
-//            Toasty.error(this, "Vous devez disposer d'une connexion Internet !!", 50, true).show();
-//        }
+        if (isNetworkAvailable(this)) {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Veuillez attendre s'il vous plaît !!");
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+            recyclerView = (RecyclerView) findViewById(R.id.recycleV);
+            new doit().execute();
+        } else {
+            Toasty.error(this, "Vous devez disposer d'une connexion Internet !!", 50, true).show();
+        }
 
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -93,25 +94,16 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
         Intent intent = null;
-
-        if (id == R.id.tab1) {
-            intent = new Intent(this, ENSAK.class);
-        } else if (id == R.id.tab2) {
-            intent = new Intent(this, FORMATIONS.class);
-        } else if (id == R.id.tab3) {
-
-        } else if (id == R.id.tab4) {
-
-        } else if (id == R.id.tab5) {
-
-        } else if (id == R.id.tab6) {
-
-        } else if (id == R.id.tab7) {
-
-        }
+        if (id == R.id.tab1)      intent = new Intent(this, ENSAK.class);
+        else if (id == R.id.tab2) intent = new Intent(this, FORMATIONS.class);
+        else if (id == R.id.tab3) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab4) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab5) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab6) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab7) intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -127,10 +119,10 @@ public class MainActivity extends AppCompatActivity
                     Document doc = Jsoup.connect("http://ensa.uit.ac.ma/category/actualites/page/" + y).get();
                     Elements elements = doc.getElementsByClass("block-content");
                     for (int x = 0; x < 10; x++) {
-                        Element element = doc.getElementsByTag("h1").get(x);
                         p = new ItemData();
-                        p.setName(element.text());
+                        p.setName(doc.getElementsByTag("h1").get(x).text());
                         p.setURL(elements.select("a").get(x).absUrl("href"));
+                        p.setImgUrl(doc.getElementsByTag("IMG").get(x + 5).attr("src"));
                         villes.add(p);
                     }
                 }

@@ -7,17 +7,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.badr.hourimeche.ensakenitra.R;
 import com.badr.hourimeche.ensakenitra.WebV;
 import com.badr.hourimeche.ensakenitra.models.ItemData;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    ArrayList<ItemData> villes;
+    private ArrayList<ItemData> villes;
     private Context context;
 
     public RecyclerViewAdapter(ArrayList<ItemData> villes, Context context) {
@@ -39,20 +41,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         viewHolder.BatTitle.setText(villes.get(position).getName());
+        Glide.with(context).load(villes.get(position).getImgUrl()).into(viewHolder.imageView);
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String url = villes.get(position).getURL();
-//                Intent i = new Intent(Intent.ACTION_VIEW);
-//                i.setData(Uri.parse(url));
-//                context.startActivity(i);
-
                 Intent myIntent = new Intent(context, WebV.class);
                 myIntent.putExtra("name", villes.get(position).getName());
                 myIntent.putExtra("url", villes.get(position).getURL());
                 context.startActivity(myIntent);
-
-
             }
         });
     }
@@ -66,12 +62,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
 
         final TextView BatTitle;
+        final ImageView imageView;
         final CardView cv;
 
         ViewHolder(View itemView) {
             super(itemView);
             cv = itemView.findViewById(R.id.card);
             BatTitle = itemView.findViewById(R.id.textView);
+            imageView = itemView.findViewById(R.id.img);
+
         }
     }
 

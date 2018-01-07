@@ -13,7 +13,7 @@ We use SimpleCache for Response Caching with a timeout of 600s, in production yo
 
 ## DEMO : 
 
-[DEMO](https://github.com/ayoubensalem/ENSAKenitra/tree/master/demo/anim.gif)
+![DEMO](https://github.com/ayoubensalem/ENSAKenitra/tree/master/demo/anim.gif)
 
 ---
 

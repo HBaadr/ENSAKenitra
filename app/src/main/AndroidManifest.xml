@@ -16,11 +16,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".WebV"
@@ -41,8 +36,17 @@
             android:name=".staticActivitys.formations.MainFORMATIONS"
             android:label="@string/formations"
             android:theme="@style/AppTheme.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".activities.ArticlesActivity"></activity>
         <activity android:name=".activities.GalleriesActivity"></activity>
+=======
+        <activity android:name=".activities.ArticlesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> ab76a391004c7b94bee3f6a008e3fbe64378f3e8
     </application>
 
 </manifest>

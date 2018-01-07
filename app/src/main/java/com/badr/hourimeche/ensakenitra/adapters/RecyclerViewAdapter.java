@@ -19,12 +19,12 @@ import java.util.ArrayList;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private ArrayList<ItemData> villes;
+    private ArrayList<ItemData> news;
     private Context context;
 
-    public RecyclerViewAdapter(ArrayList<ItemData> villes, Context context) {
+    public RecyclerViewAdapter(ArrayList<ItemData> news, Context context) {
 
-        this.villes = villes;
+        this.news = news;
         this.context = context;
     }
 
@@ -40,14 +40,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
 
-        viewHolder.BatTitle.setText(villes.get(position).getName());
-        Glide.with(context).load(villes.get(position).getImgUrl()).into(viewHolder.imageView);
+        viewHolder.BatTitle.setText(news.get(position).getName());
+        Glide.with(context).load(news.get(position).getImgUrl()).into(viewHolder.imageView);
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(context, WebV.class);
-                myIntent.putExtra("name", villes.get(position).getName());
-                myIntent.putExtra("url", villes.get(position).getURL());
+                myIntent.putExtra("name", news.get(position).getName());
+                myIntent.putExtra("url", news.get(position).getURL());
                 context.startActivity(myIntent);
             }
         });
@@ -55,7 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return villes.size();
+        return news.size();
     }
 
 

@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.badr.hourimeche.ensakenitra.activities.GalleriesActivity;
 import com.badr.hourimeche.ensakenitra.adapters.RecyclerViewAdapter;
 import com.badr.hourimeche.ensakenitra.models.ItemData;
 import com.badr.hourimeche.ensakenitra.staticActivitys.ensak.ENSAK;
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.tab5) intent = new Intent(this, MainActivity.class);
         else if (id == R.id.tab6) intent = new Intent(this, MainActivity.class);
         else if (id == R.id.tab7) intent = new Intent(this, MainActivity.class);
+        else if (id == R.id.tab100) intent = new Intent(this, GalleriesActivity.class);
         startActivity(intent);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

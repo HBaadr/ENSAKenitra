@@ -9,15 +9,19 @@ The Webservice is hosted on heroku, and built with Flask, and Scrapy, you can fi
 Basically, we scrapy data from the website, and render it in the Mobile UI. 
 We use SimpleCache for Response Caching with a timeout of 600s, in production you can use Redis.
 
-- TODO 
+---
+
+## TODO 
+
  * Add other information 
  * Implement A Cron Job for scraping every night at 23:00
 
+--- 
 
-- Contributors:
+## Contributors:
+
  * Badr Hourimche
  * Charaf Boughriba 
  * Kajja Mohammed 
  * Ayoub ED-DAFALI
-
 

@@ -43,6 +43,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.ArticlesActivity"></activity>
         <activity android:name=".activities.GalleriesActivity"></activity>
+
     </application>
 
 </manifest>

@@ -10,6 +10,10 @@
         android:icon="@drawable/training"
         android:title="@string/formations" />
     <item
+        android:id="@+id/tab100"
+        android:icon="@drawable/training"
+        android:title="@string/GALERIES" />
+    <item
         android:id="@+id/tab3"
         android:icon="@drawable/study"
         android:title="@string/espace_etudiant" />

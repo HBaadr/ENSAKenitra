@@ -1,12 +1,12 @@
 # ENSAK_MOBILE_APP 
 
-This is a MobileApp of a ENSAK website. 
-It uses a restful api to retrieve data, using retrofit library. 
+This is a MobileApp of The ENSAK website. 
+It uses a restful api to retrieve data, with the help of retrofit library. 
 
-The Webservice is hosted on heroku, and built with Flask, and Scrapy, you can find the details here : 
+The Webservice is hosted on heroku, and built with Flask and Scrapy, you can find the details here : 
  * [ENSAK_API](https://github.com/ayoubensalem/ENSAK_API)
 
-Basically, we scrapy data from the website, and render it in the Mobile UI. 
+Basically, we scrape data from the website, and render it in the Mobile UI. 
 We use SimpleCache for Response Caching with a timeout of 600s, in production you can use Redis.
 
 ---
